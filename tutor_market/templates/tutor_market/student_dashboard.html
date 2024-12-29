@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container mt-5">
+    <h2 class="mb-4">Student Dashboard</h2>
+    <div class="row mt-5">
+      <div class="col col-md-9 col-lg-7">
+        <h3>Your Personal Information</h3>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Name:</strong>
+                </td>
+                <td>{{ user }}</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Email:</strong>
+                </td>
+                <td>{{ user.email }}</td>
+                <td>
+                  <a href="{% url 'account_email' %}"
+                     class="btn btn-outline-light btn-sm"
+                     aria-label="Edit Email"
+                     title="Edit Email"><i class="fa fa-pencil"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Password:</strong>
+                </td>
+                <td>**********</td>
+                <td>
+                  <a href="{% url 'account_change_password' %}"
+                     class="btn btn-outline-light btn-sm"
+                     aria-label="Change Password"
+                     title="Change Password"><i class="fa fa-pencil"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Become a tutor</strong>
+                </td>
+                <td>
+                  <a href="{% url 'add_tutor' %}"
+                     class="btn btn-outline-light btn-sm"
+                     aria-label="Create Tutor Profile"
+                     title="Create Tutor Profile"><i class="fa-solid fa-plus"></i> Click here to Create your tutor Profile</a>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 row-cols-1 row-cols-md-2 row-gap-5">
+      <div class="col">
+        <h3>Upcoming Lessons</h3>
+        <ul class="list-group">
+          {% for session in upcoming_sessions %}
+            {% include "tutor_market/includes/lesson_list_item.html" with button="join" student_tutor="tutor" %}
+          {% empty %}
+            <li class="list-group-item">No upcoming lessons.</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Booking History</h3>
+        <ul class="list-group">
+          {% for session in booking_history %}
+            {% include "tutor_market/includes/lesson_list_item.html" with button="join" student_tutor="tutor" status="display" payment_status="display" %}
+          {% empty %}
+            <li class="list-group-item">No past bookings.</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <h3>Payment History</h3>
+        {% if amount_of_unpaid_sessions > 0 %}
+          <span class="text-muted">You have {{ amount_of_unpaid_sessions }} unpaid
+            {% if amount_of_unpaid_sessions > 1 %}
+              lessons.
+            {% else %}
+              lesson.
+            {% endif %}
+            <a href="{% url 'payments' user.id %}"
+               class="btn btn-secondary btn-sm ms-3"
+               aria-label="Pay now"><i class="fas fa-euro-sign"></i> Pay now</a>
+          </span>
+        {% endif %}
+        <div class="table-responsive">
+          <table class="table mt-4">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
+                <th scope="col">Lessons Paid for</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for payment in payment_history %}
+                <tr>
+                  <td>{{ payment.date|date:'D, d M Y H:i' }}</td>
+                  <td>{{ payment.amount }} EUR</td>
+                  <td>{{ payment.status }}</td>
+                  <td>
+                    <ul>
+                      {% for session in payment.sessions.all %}
+                        <li>
+                          {{ session.tutor.display_name }}
+                          on {{ session.start_time|date:'D, d M Y H:i' }} (UTC)
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="4">No payment history.</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container mt-5">
+    <h2 class="mb-4">Tutor Dashboard</h2>
+    <div class="row row-cols-1 row-cols-lg-2 row-gap-5">
+      <div class="col">
+        {% include "tutor_market/includes/tutor_card.html" with page="tutor_detail" %}
+        <div class="col">
+          <div class="text-muted">
+            <i class="fas fa-arrow-up"></i> How others see your profile when they
+            search for it.
+          </div>
+          <div class="mt-2">
+            <a href="{% url 'tutor_detail' tutor.pk %}"
+               class="btn btn-secondary btn-sm mt-1"
+               aria-label="View your full Profile Page">
+              <i class="fas fa-user"></i> View your full Profile Page
+            </a>
+            <a href="{% url 'edit_tutor' tutor.pk %}"
+               class="btn btn-secondary btn-sm mt-1"
+               aria-label="Edit Your Profile">
+              <i class="fas fa-pencil"></i> Edit Your Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h3>Your Personal Information</h3>
+        {% if not tutor.profile_status %}
+          <div class="alert alert-warning">
+            Your Profile is incomplete. Please add your Calendly URL and connect your Calendly account if you haven't already.
+            <hr>
+            As long as your profile remains incomplete, it will not be displayed in student's search results.
+            <div>
+              <a href="{% url 'calendly_information' %}"
+                 class="btn btn-outline-dark btn-sm mt-2"
+                 aria-label="Where to find my Calendly information?">
+                <i class="fas fa-info-circle"></i> Where to find my Calendly information?
+              </a>
+            </div>
+          </div>
+        {% endif %}
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Name:</strong>
+                </td>
+                <td>{{ user }}</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Email:</strong>
+                </td>
+                <td>{{ user.email }}</td>
+                <td>
+                  <a href="{% url 'account_email' %}"
+                     class="btn btn-outline-light btn-sm"
+                     aria-label="Edit Email"
+                     title="Edit Email">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Password:</strong>
+                </td>
+                <td>**********</td>
+                <td>
+                  <a href="{% url 'account_change_password' %}"
+                     class="btn btn-outline-light btn-sm"
+                     aria-label="Change Password"
+                     title="Change Password">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Bank details (IBAN):</strong>
+                </td>
+                <!-- -> Credit for slicing the string: https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#slice -->
+                {% if tutor.iban %}
+                  <td>Ends in: {{ tutor.iban|slice:'-4:' }}</td>
+                {% else %}
+                  <td>Add your IBAN, it's how we will pay you.</td>
+                {% endif %}
+                <td>
+                  <a href="{% url 'edit_tutor' tutor.pk %}"
+                     class="btn btn-outline-light btn-sm"
+                     aria-label="Edit Bank details"
+                     title="Edit Bank details">
+                    <i class="fas fa-pencil"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Calendly Event Url:</strong>
+                </td>
+                <!-- -> Credit for slicing the string: https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#slice -->
+                {% if tutor.calendly_event_url %}
+                  <td>
+                    <a href="{{ tutor.calendly_event_url }}"
+                       aria-label="Link to the Calendly Event URL"
+                       rel="noopener noreferrer"
+                       target="_blank">{{ tutor.calendly_event_url }}</a>
+                  </td>
+                {% else %}
+                  <td>Add your Calendly Event URL</td>
+                {% endif %}
+                <td>
+                  <a href="{% url 'edit_tutor' tutor.pk %}"
+                     class="btn btn-outline-light btn-sm"
+                     aria-label="Edit Calendly Event Url"
+                     title="Edit Calendly Event Url">
+                    <i class="fas fa-pencil"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Calendly Account:</strong>
+                </td>
+                {% if tutor.calendly_access_token %}
+                  <td>Connected</td>
+                  <td>
+                    <a href="{% url 'disconnect_calendly' tutor.pk %}"
+                       class="btn btn-outline-light btn-sm"
+                       aria-label="Disconnect Calendly"
+                       title="Disconnect Calendly">
+                      <i class="fas fa-link-slash"></i>
+                    </a>
+                  </td>
+                {% else %}
+                  <td colspan="2">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span>Not Connected</span>
+                      <a href="{% url 'connect_calendly' %}"
+                         class="btn btn-outline-light btn-sm"
+                         aria-label="Connect Calendly"
+                         title="Connect Calendly">
+                        <i class="fas fa-link"></i> Connect Calendly
+                      </a>
+                    </div>
+                  </td>
+                {% endif %}
+              </tr>
+              <tr>
+                <td>
+                  <button style="
+                  background: #9ee69e;
+                  color: black;
+                  border: 1px solid black;
+                  border-radius: 10px;
+                  padding: 6px 6px;
+                  width: 100px;
+              "><a href="/tutor-market/tutor-messages/">Messages</a></button>
+                </td>
+
+                
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-gap-5 mt-5">
+      {% if pending_sessions %}
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3>Pending Lessons</h3>
+              <p class="text-muted">
+                The following Lessons were requested by students and are waiting for
+                your confirmation:
+              </p>
+              <ul class="list-group list-group-flush">
+                {% for session in pending_sessions %}
+                  {% include "tutor_market/includes/lesson_list_item.html" with button="schedule" student_tutor="student" %}
+                {% empty %}
+                  <li class="list-group-item">No pending lessons.</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h3>Upcoming Lessons</h3>
+            <p class="text-muted">Your next 3 Scheduled Lessons</p>
+            <ul class="list-group list-group-flush">
+              {% for session in upcoming_sessions %}
+                {% include "tutor_market/includes/lesson_list_item.html" with button="join" student_tutor="student" %}
+              {% empty %}
+                <li class="list-group-item">No upcoming lessons.</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <h3>All of your upcoming Lessons</h3>
+        <p class="text-muted">Grouped by Student</p>
+        <!-- -> Credit for iterating over dictionaries (tuples): https://forum.djangoproject.com/t/loop-through-dictionary-of-lists/2849 -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-3">
+          {% for student, sessions in users_and_sessions.items %}
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <span class="text-muted">Student:</span> {{ student }}
+                  </h5>
+                  <a href="mailto:{{ student.email }}"
+                     aria-label="Email student"
+                     title="Email student">{{ student.email }}</a>
+                  <p class="text-muted mt-5 mb-0">Upcoming Lessons:</p>
+                  <ul class="list-group list-group-flush">
+                    {% for session in sessions %}
+                      {% include "tutor_market/includes/lesson_list_item.html" with button="join" status="show" %}
+                    {% empty %}
+                      <p>No upcoming Lessons</p>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {% empty %}
+            <p>You currently have no students.</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="accordion" id="bookingHistoryAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="false"
+                      aria-controls="collapseOne">Booking History</button>
+            </h2>
+            <div id="collapseOne"
+                 class="accordion-collapse collapse"
+                 aria-labelledby="headingOne"
+                 data-bs-parent="#bookingHistoryAccordion">
+              <div class="accordion-body">
+                <ul class="list-group list-group-flush">
+                  {% for session in booking_history %}
+                    <li class="list-group-item">
+                      <strong>Subject:</strong> {{ session.subject }}
+                      <br>
+                      <strong>Date:</strong> {{ session.start_time|date:'D, d M Y H:i' }} (UTC)
+                      <br>
+                      <strong>Status:</strong> {{ session.session_status }}
+                      <br>
+                      <strong>Payment status:</strong>
+                      {% if session.payment_complete %}
+                        Complete
+                      {% else %}
+                        Pending
+                      {% endif %}
+                    </li>
+                  {% empty %}
+                    <li class="list-group-item">No past bookings.</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <div class="alert danger-zone">
+          <h4 class="alert-heading">Danger Zone</h4>
+          <p>
+            Be careful! Actions performed in this area cannot be undone. This will permanently delete your tutor profile and all associated data.
+          </p>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <span><strong>Proceed with caution.</strong></span>
+            <a href="{% url 'delete_tutor' tutor.pk %}"
+               class="btn btn-outline-danger btn-sm"
+               aria-label="Delete Your Tutor Profile">
+              <i class="fas fa-trash"></i> Delete Your Tutor Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

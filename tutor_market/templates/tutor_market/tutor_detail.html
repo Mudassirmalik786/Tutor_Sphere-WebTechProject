@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% comment %} {% include "newbase.html" %} {% endcomment %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col">
+        <!-- Tutor Profile -->
+        <div class="row">
+          <!-- -> Credit for include with: https://www.w3schools.com/django/django_tags_include.php -->
+          {% include "tutor_market/includes/tutor_card.html" with page="tutor_detail" %}
+        </div>
+        <div class="row mt-4 mb-5">
+          <div class="col">
+            <h3>About me</h3>
+            {{ tutor.description }}
+          </div>
+          <div>
+            {% url 'tutor_messages' %}
+          </div>
+          <div class="col">
+            <!-- chat button -->
+            <a href="{% url 'start_conversation' tutor.id %}">
+              <button
+                class="animated-button"
+                style="
+                  position: relative;
+                  display: flex;
+                  align-items: center;
+                  gap: 4px;
+                  padding: 0px 25px;
+                  border: 4px solid transparent;
+                  font-size: 0.75rem;
+                  background-color: inherit;
+                  border-radius: 100px;
+                  font-weight: 600;
+                  color: #ffffff;
+                  box-shadow: 0 0 0 2px #4caf50;
+                  cursor: pointer;
+                  overflow: hidden;
+                  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+                  width: 170px;
+                  height: 40px;
+                  margin-top: 8px;
+                  background: linear-gradient(135deg, #43a047, #66bb6a);
+                "
+              >
+             
+                  Chat {{ tutor.display_name }}
+                </span>
+                <span
+                  class="circle"
+                  style="
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 20px;
+                    height: 20px;
+                    background-color: #ffffff;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+                  "
+                ></span>
+               
+              </button>
+            </a>
+            
+          </div>
+          
+        </div>
+        <!-- Reviews Section -->
+        <!-- -> Credit for reviews section: https://github.com/benschaf/waste-schedule/blob/main/wasteschedules/templates/wasteschedules/schedule_detail.html -->
+        <h3>Reviews</h3>
+        <div class="row">
+          <div class="col-3">{% include "includes/average_rating.html" %}</div>
+          <div class="col">
+            {% for score, data in review_counts.items %}
+              <div class="d-flex justify-content-between align-items-center gap-3">
+                <div>
+                  {{ score }} <i class="fas fa-star"></i>
+                </div>
+                <!-- -> Credit for bootstrap bars: https://getbootstrap.com/docs/5.3/components/progress/ -->
+                <div class="progress flex-grow-1"
+                     role="progressbar"
+                     aria-label="Basic example"
+                     aria-valuenow="{{ data.percentage }}"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+                  <!-- Dynamic progress bar width using inline style -->
+                  <div class="progress-bar bg-primary" style="width: {{ data.percentage }}%"></div>
+                </div>
+                <div>{{ data.count }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- Creating new Review -->
+        <div class="row mt-5">
+          <div class="col">
+            <div class="card-body sticky-md-top">
+              {% if user.is_authenticated %}
+                {% if user != tutor.user %}
+                  {% if existing_review %}
+                    <h5>Change your review</h5>
+                    <span class="text-muted">you already posted a review</span>
+                  {% else %}
+                    <h4>Leave a review:</h4>
+                  {% endif %}
+                  <form action="{% url 'tutor_detail' tutor.pk %}" method="post" class="mt-2">
+                    {% csrf_token %}
+                    <!-- -> Credit for crispy forms: https://github.com/Code-Institute-Solutions/blog/tree/main/12_views_part_3/01_posting_to_database -->
+                    {{ form|crispy }}
+                    <button id="submitButton" type="submit" class="btn btn-primary">Leave Review</button>
+                  </form>
+                {% else %}
+                  <p class="text-muted">Have a look at how your students rated you.</p>
+                {% endif %}
+              {% else %}
+                <p>
+                  <a href="{% url 'account_login' %}?next={{ request.path }}"
+                     aria-label="Log in"
+                     title="Log in">Log in</a> to leave a review
+                </p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col">
+            <ul class="list-group list-group-flush">
+              {% for review in reviews %}
+                <li class="list-group-item ps-0">
+                  <div class="d-flex align-items-center gap-3">
+                    <div>
+                      <span class="badge bg-secondary text-dark">
+                        <i class="fa-regular fa-user"></i>
+                        {{ review.user }}
+                        {% if review.user == request.user %}(you){% endif %}
+                      </span>
+                      <i class="fas fa-star"></i> <span>{{ review.score }}</span>
+                      <p>{{ review.comment }}</p>
+                    </div>
+                  </div>
+                </li>
+              {% empty %}
+                No reviews yet.
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5 col-xl-4">
+        <!-- -> Credit for using Calendly embeds: https://developer.calendly.com/api-docs/6a743888e5649-getting-started-with-embeds -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-1">
+          <div class="col mt-3">
+            <h5>Select a date below to book a lesson with {{ tutor }}</h5>
+            <p class="text-muted">See your tutors live avaliability - made possible by Calendly (book now, pay later)</p>
+            {% if user.is_authenticated %}
+              {% if not tutor.testing_profile %}
+                <div id="calendly"></div>
+                <div class="d-none">
+                  <form id="calendly_form_hidden"
+                        action="{% url 'fetch_calendly_data' tutor.pk %}"
+                        method="post">
+                    {% csrf_token %}
+                    {{ calendly_form }}
+                    
+                  </form>
+                </div>
+              {% else %}
+                <div class="alert alert-danger" role="alert">
+                  <i class="fas fa-exclamation-circle me-2"></i> Testing Profile!
+                  <p class="mb-0">
+                    You can't book lessons with a testing tutor profile. The Warning messages at the bottom are intentional.
+                  </p>
+                </div>
+              {% endif %}
+            {% else %}
+              <a href="{% url 'account_login' %}?next={{ request.path }}"
+                 aria-label="Log in"
+                 title="Log in">Log in</a> to book a lesson
+            {% endif %}
+          </div>
+          {% if upcoming_sessions %}
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5>Your upcoming Lessons with {{ tutor }}</h5>
+                  <ul class="list-group list-group-flush mt-4">
+                    {% for session in upcoming_sessions %}
+                      {% include "tutor_market/includes/lesson_list_item.html" with button="join" %}
+                    {% endfor %}
+                  </ul>
+                  <p>
+                    See all of your upcoming Lessons on your <a href="{% url "dashboard" user.pk %}"
+    aria-label="Dashboard"
+    class="text-dark">Dashboard</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+{% block postloadjs %}
+  {{ block.super }}
+  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <!-- -> Credit for sending multiple variables to js: https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#json-script -->
+  <script id="tutor-detail-data" type="application/json">
+    {
+      "calendly_event_url": "{{ calendly_event_url }}",
+      "user": "{{ user }}",
+      "email": "{{ user.email }}"
+    }
+  </script>
+  <script src="{% static "tutor_market/js/tutor_detail.js" %}"></script>
+{% endblock postloadjs %}
+
+

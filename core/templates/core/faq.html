@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p>Welcome to our FAQ page. Here you can find answers to commonly asked questions.</p>
+        <div class="accordion" id="FAQAccordion">
+            {% for faq in faqs %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse{{ faq.id }}"
+                                aria-expanded="false"
+                                aria-controls="collapse{{ faq.id }}">{{ faq.question }}</button>
+                    </h2>
+                    <div id="collapse{{ faq.id }}"
+                         class="accordion-collapse collapse"
+                         data-bs-parent="#FAQAccordion">
+                        <div class="accordion-body">{{ faq.answer }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h1 class="display-4">500 Internal Server Error</h1>
+                <p class="lead">An unexpected error occurred on the server.</p>
+                <p><a href="{% url 'landing_page' %}" class="btn btn-primary">Back to Home</a></p>
+                <img src="{% static "images/500.webp" %}" alt="A server with a broken cable." class="img-fluid" width="3200" height="3200">
+            </div>
+        </div>
+    </div>
+{% endblock content %}

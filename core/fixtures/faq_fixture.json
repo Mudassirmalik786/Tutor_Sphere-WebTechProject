@@ -1,0 +1,82 @@
+[
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 1,
+        "fields": {
+            "question": "How do I book a tutor?",
+            "answer": "To book a tutor, navigate to the 'Booking' section, select a tutor, and choose an available time slot."
+        }
+    },
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 2,
+        "fields": {
+            "question": "What is the cancellation policy?",
+            "answer": "You can cancel a booking up to 24 hours before the scheduled time without any charges."
+        }
+    },
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 3,
+        "fields": {
+            "question": "How do I reset my password?",
+            "answer": "To reset your password, click on the 'Forgot Password' link on the login page and follow the instructions."
+        }
+    },
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 4,
+        "fields": {
+            "question": "How can I contact customer support?",
+            "answer": "You can contact customer support via email at support@example.com or by calling (123) 456-7890."
+        }
+    },
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 5,
+        "fields": {
+            "question": "What payment methods are accepted?",
+            "answer": "We accept all major credit cards, PayPal, and Apple Pay."
+        }
+    },
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 6,
+        "fields": {
+            "question": "How do I create an account?",
+            "answer": "To create an account, click on the 'Sign Up' button on the top right corner of the homepage and fill in the required information."
+        }
+    },
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 7,
+        "fields": {
+            "question": "Can I change my booking?",
+            "answer": "Yes, you can change your booking up to 24 hours before the scheduled time. Please contact customer support for assistance."
+        }
+    },
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 8,
+        "fields": {
+            "question": "Do you offer group tutoring sessions?",
+            "answer": "Yes, we offer group tutoring sessions. You can find more information in the 'Group Sessions' section."
+        }
+    },
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 9,
+        "fields": {
+            "question": "How do I leave a review for a tutor?",
+            "answer": "After your session, you will receive an email with a link to leave a review for your tutor."
+        }
+    },
+    {
+        "model": "core.frequentlyaskedquestion",
+        "pk": 10,
+        "fields": {
+            "question": "What subjects do you offer tutoring in?",
+            "answer": "We offer tutoring in a wide range of subjects including math, science, languages, and more. Check the 'Subjects' section for a full list."
+        }
+    }
+]

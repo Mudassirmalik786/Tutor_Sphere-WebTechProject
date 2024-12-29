@@ -1,0 +1,6 @@
+<span class="fs-5"><i class="fas fa-star"></i>
+    <!-- -> Credit for floatformat template filter: https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#floatformat -->
+{{ tutor.average_rating.score__avg|floatformat:1 }}
+</span>
+<br>
+<span class="text-muted fs-6">{{ tutor.ratings.count }} review{% if tutor.ratings.count != 1 %}s{% endif %}</span>

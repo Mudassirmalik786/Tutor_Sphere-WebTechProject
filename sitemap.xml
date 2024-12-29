@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/add-tutor/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/?subject=english</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/?subject=math</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/?subject=science</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/?subject=history</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/?subject=biology</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/?subject=chemistry</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/faq/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/about/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/accounts/signup/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/accounts/signup/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/accounts/login/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/accounts/login/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000008/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000012/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000006/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000022/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000005/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/2/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/?page=2</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/?page=3</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2Fadd-tutor%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2Fadd-tutor%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000002/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000009/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/1/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000013/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000003/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000010/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/4/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000011/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000014/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000004/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/100000007/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/faq/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/faq/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/about/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/about/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Faccounts%2Fsignup%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Faccounts%2Fsignup%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Faccounts%2Fsignup%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/accounts/google/login/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/accounts/google/login/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Faccounts%2Flogin%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Faccounts%2Flogin%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Faccounts%2Flogin%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/accounts/password/reset/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/accounts/password/reset/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000008/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000008/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000012/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000012/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000006/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000006/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000022/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000022/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000005/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000005/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/2/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/2/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/tutor-market/?page=1</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2Fadd-tutor%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000002/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000002/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000009/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000009/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/1/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/1/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000013/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000013/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000003/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000003/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000010/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000010/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/4/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/4/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000011/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000011/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000014/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000014/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000004/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000004/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=/tutor-market/100000007/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=/tutor-market/100000007/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ffaq%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ffaq%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ffaq%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Fabout%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Fabout%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Fabout%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Faccounts%2Fgoogle%2Flogin%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Faccounts%2Fgoogle%2Flogin%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Faccounts%2Fgoogle%2Flogin%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Faccounts%2Fpassword%2Freset%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Faccounts%2Fpassword%2Freset%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Faccounts%2Fpassword%2Freset%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000008%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000008%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000008%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000012%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000012%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000012%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000006%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000006%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000006%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000022%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000022%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000022%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000005%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000005%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000005%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F2%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F2%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F2%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000002%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000002%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000002%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000009%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000009%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000009%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F1%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F1%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F1%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000013%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000013%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000013%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000003%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000003%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000003%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000010%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000010%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000010%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F4%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F4%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F4%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000011%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000011%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000011%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000014%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000014%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000014%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000004%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000004%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000004%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/login/?next=%2Ftutor-market%2F100000007%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/google/login/?process=login&amp;next=%2Ftutor-market%2F100000007%2F?next=/</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://gipfel-tutor-768a610dc54f.herokuapp.com/accounts/signup/?next=%2Ftutor-market%2F100000007%2F</loc>
+  <lastmod>2024-09-11T11:42:54+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>

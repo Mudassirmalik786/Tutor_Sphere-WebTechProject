@@ -1,0 +1,102 @@
+{% load static%}
+<div class="col">
+  <div class="card border-0 bg-light">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          {% if tutor.profile_image %}
+            <img src="{{ tutor.profile_image.url }}"
+                 alt="Image of {{ tutor.display_name }}"
+                 class="img-fluid rounded">
+          {% else %}
+            <img src="https://gipfel-tutor-768a610dc54f.s3.eu-north-1.amazonaws.com/media/tutor_images/default_profile_image.png"
+                 alt="Default profile image"
+                 class="img-fluid rounded">
+          {% endif %}
+        </div>
+        <div class="col">
+          <div class="row mb-3 mt-3 mt-md-0">
+            <div class="col">
+              <h5 class="d-inline">
+                <a href="{% url 'tutor_detail' tutor.pk %}"
+                   aria-label="View tutor details"
+                   title="View tutor details">{{ tutor.display_name }}</a>
+              </h5>
+              {% if tutor.testing_profile %}
+                <span class="btn badge text-bg-danger"
+                      data-bs-toggle="popover"
+                      data-bs-placement="top"
+                      data-bs-content="Developers Note: This is a testing profile and should not be used for booking lessons or making payments.">Testing profile
+                  <i class="fa-solid fa-info-circle"></i>
+                </span>
+              {% else %}
+                <span class="btn badge text-bg-info"
+                      data-bs-toggle="popover"
+                      data-bs-placement="top"
+                      data-bs-content="Booking lessons and making payments enabled and safe with this Tutor.">Verified
+                  <i class="fa-solid fa-check-circle"></i>
+                </span>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-5 order-md-2">
+              <p>{% include "includes/average_rating.html" %}</p>
+              <p>€{{ tutor.hourly_rate }} per lesson</p>
+              
+            </div>
+            <div class="col order-md-1">
+              <div class="d-flex">
+                <div class="me-2">
+                  <span class="text-muted"><i class="fa-solid fa-scale-balanced"></i></span>
+                </div>
+                <div>
+                  {% for value in tutor.values.all %}<span class="badge rounded-pill my-value-pill me-1">{{ value }}</span>{% endfor %}
+                </div>
+              </div>
+
+              <div class="d-flex mt-2">
+                <div class="me-2">
+                  <span class="text-muted"><i class="fa-solid fa-graduation-cap"></i></span>
+                </div>
+                <div>
+                  {% for subject in tutor.subjects.all %}
+                    <span class="badge rounded-pill my-subject-pill">{{ subject.name }}</span>
+                  {% endfor %}
+                  
+
+
+                  
+                
+                
+                </div>
+              </div>
+            </div>
+            <!-- <div class= "messagingCard">
+            
+
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col">{{ tutor.catch_phrase }}</div>
+        {% if not page %}
+          <div class="col d-flex justify-content-end align-items-center">
+            {% if not tutor.testing_profile %}
+              <a href="{% url 'tutor_detail' tutor.pk %}"
+                 class="btn btn-primary"
+                 aria-label="Book a trial lesson">Book a trial lesson!</a>
+            {% else %}
+              <a href="{% url 'tutor_detail' tutor.pk %}"
+                 class="btn btn-primary"
+                 aria-label="View tutor details">View tutor details</a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+

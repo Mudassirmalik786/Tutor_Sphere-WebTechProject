@@ -1,0 +1,11 @@
+[
+    {
+        "model": "core.about",
+        "pk": 1,
+        "fields": {
+            "title": "Learn with the perfect tutor for you.",
+            "content": "Welcome to Gipfel Tutor, the easiest way to find the perfect tutor for you. We have a wide range of tutors available to help you with whatever you're studying. Whether you need help with a specific subject, or just want to improve your study skills, we have the perfect tutor for you. You will be able to find your tutor by looking for teaching values that you identify with the most. We wish you the best of luck in your studies!",
+            "is_active": true
+        }
+    }
+]

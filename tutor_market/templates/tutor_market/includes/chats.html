@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Chats</title>
+    <link rel="stylesheet" href="{% static 'css/chats.css' %}">
+</head>
+<body>
+    <div class="chat-list-container">
+        <header class="header">
+            <h1>Chats</h1>
+        </header>
+        <div class="chat-list scroll">
+            {% for chat in chats %}
+            <a href="{% url 'chats' tutor.id %}" class="chat-item">
+                    <div class="avatar">
+                        <img src="{{ chat.tutor.avatar.url }}" alt="{{ chat.tutor.display_name }}" class="avatar-img">
+                    </div>
+                    <div class="chat-details">
+                        <div class="chat-info">
+                            <span class="chat-name">{{ chat.tutor.display_name }}</span>
+                            <span class="chat-time">{{ chat.last_message.timestamp|date:"H:i" }}</span>
+                        </div>
+                        <div class="chat-preview">
+                            {{ chat.last_message.content|truncatewords:10 }}
+                        </div>
+                    </div>
+                </a>
+            {% empty %}
+                <p class="no-chats">No chats available. Start a conversation!</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .chat-list-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .chat-list {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .chat-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s;
+        }
+        .chat-item:hover {
+            background-color: #f9f9f9;
+        }
+        .avatar {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .chat-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .chat-name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .chat-time {
+            font-size: 12px;
+            color: #aaa;
+        }
+        .chat-preview {
+            font-size: 14px;
+            color: #555;
+        }
+        .no-chats {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+        }
+    </style>
+</body>
+</html>

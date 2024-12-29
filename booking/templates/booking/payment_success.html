@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container">
+    <div id="message" class="alert alert-success rounded-pill border-0 px-5">
+      <p class="mt-3">
+        <strong>Your Payment has come through!</strong>
+        <span>Thank you very much for ordering these lessons!</span>
+      </p>
+      <p>A confirmation email will be sent to {{ payment.user.email }} shortly.</p>
+    </div>
+    <div class="row mt-5 row-gap-5">
+      <div class="col">
+        <h5 class="mb-3">Payment Details</h5>
+        <p class="card-text">
+          <strong>Paying User:</strong> {{ payment.user.username }}
+        </p>
+        <p class="card-text">
+          <strong>Amount:</strong> {{ payment.amount }}
+        </p>
+        <p class="card-text">
+          <strong>Currency:</strong> {{ payment.currency|upper }}
+        </p>
+        <p class="card-text">
+          <strong>Payment Status:</strong> {{ payment.get_status_display }}
+        </p>
+        <p class="card-text">
+          <strong>Date:</strong> {{ payment.date|date:'d M Y H:i' }}
+        </p>
+      </div>
+      <div class="col-lg-8">
+        <span class="text-muted">With this payment you paid for the follwoing Lessons:</span>
+        <ul class="list-group mt-3">
+          {% for session in sessions %}
+            <li class="list-group-item">
+              Lesson with {{ session.tutor.display_name }} on {{ session.start_time|date:'d M Y' }} at {{ session.start_time|date:'H:i' }} (UTC). Amount: €{{ session.price }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="mt-5">
+      <a href="{% url 'dashboard' payment.user.id %}"
+         class="btn btn-primary"
+         aria-label="Go to your Dashboard"
+         title="Go to your Dashboard">Go to your Dashboard</a>
+    </div>
+  </div>
+{% endblock content %}

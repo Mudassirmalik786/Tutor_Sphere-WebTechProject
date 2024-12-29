@@ -1,0 +1,16 @@
+core.Microsoft*
+core.mongo*
+core.python*
+env.py
+__pycache__/
+*.py[cod]
+node_modules/
+cloudinary_python.txt
+db.sqlite3
+.coverage
+sass/
+staticfiles/
+fixtures_sensitive/
+test_accounts.txt
+backup_private_fixture.json
+venv/

@@ -1,0 +1,324 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block meta %}
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta charset="utf-8">
+      <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description"
+            content="Gipfel Tutor - Elevate your learning experience with expert tutors in various subjects. Personalized tutoring sessions tailored to your needs.">
+      <meta name="keywords"
+            content="Tutoring, Online Tutor, Tutoring Service, Online Learning, Private Tutor, Tutoring jobs, Online Math Tutor, Online English Tutor, Online Tutor, Online Language Tutor, Online Tutoring Service, Help with Homework, Affordable Online Tutoring, One-on-One Online Tutoring, Best Online Tutoring Services, Online Tutoring jobs">
+    {% endblock meta %}
+    {% block extra_meta %}
+    {% endblock extra_meta %}
+    {% block corecss %}
+      <!-- add google font -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+      <link rel="stylesheet" href="{% static 'css/custom_bootstrap.css' %}">
+      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"
+            rel="stylesheet"
+            type="text/css">
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock corecss %}
+    {% block favicon %}
+      <!-- -> Credit for favicon: https://fontawesome.com/icons/mountain-sun?f=classic&s=solid -->
+      <link rel="shortcut icon"
+            href="{% static 'images/favicon/favicon-mountain-sun-solid.ico' %}"
+            type="image/x-icon">
+    {% endblock favicon %}
+    {% block extra_css %}
+    {% endblock extra_css %}
+    {% block corejs %}
+    {% endblock corejs %}
+    {% block extra_js %}
+    {% endblock extra_js %}
+    <title style="color: #4a90e2;">
+      Tutor Sphere
+      {% block extra_title %}
+      {% endblock extra_title %}
+    </title>
+  </head>
+  <body>
+    <header class="navbar-container container-fluid fixed-top bg-body-tertiary">
+      <!-- add in navbar -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+        <div class="container-fluid">
+          <a class="navbar-brand"
+             href="{% url 'landing_page' %}"
+             aria-label="Gipfel Tutor homepage">Tutor Sphere</a>
+          <button class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                {% comment %} <a href="{% url 'chats' chat.tutor.id %}" class="chat-item"> Chats</a> {% endcomment %}
+                {% comment %} <a href="{% url 'chats' user.id %}" class="chat-item"> Chats</a> {% endcomment %}
+
+                
+              </li>
+              {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                  <li class="nav-item">
+                    <!-- -> Credit for admin url name: https://forum.djangoproject.com/t/cant-create-link-to-admin-page-in-my-template/12533/8 -->
+                    <a class="nav-link"
+                       href="{% url 'admin:index' %}"
+                       aria-label="Admin Panel">
+                      <i class="fas fa-cogs"></i> Admin Panel
+                    </a>
+                  </li>
+                {% endif %}
+                <li class="nav-item">
+                  <a class="nav-link {% if request.resolver_match.view_name == 'dashboard' %}active{% endif %}"
+                     href="{% url 'dashboard' user.id %}"
+                     {% if request.resolver_match.view_name == 'dashboard' %}aria-current="page"{% endif %}
+                     aria-label="Dashboard">
+                    {% if request.resolver_match.view_name == 'dashboard' %}
+                      <i class="fa-solid fa-rectangle-list"></i>
+                    {% else %}
+                      <i class="fa-regular fa-rectangle-list"></i>
+                    {% endif %}
+                    Dashboard
+                  </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle"
+                     href="#"
+                     id="navbarDropdown"
+                     role="button"
+                     data-bs-toggle="dropdown"
+                     aria-expanded="false"
+                     aria-label="User Dropdown">
+                    <i class="fas fa-user"></i> {{ user.username }}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <a class="dropdown-item"
+                         href="{% url 'account_logout' %}"
+                         aria-label="Logout">Logout</a>
+                    </li>
+                  </ul>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                     href="{% url 'account_signup' %}?next={{ request.path }}"
+                     {% if request.path == signup_url %}aria-current="page"{% endif %}
+                     aria-label="Register">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                     href="{% url 'account_login' %}?next={{ request.path }}"
+                     {% if request.path == login_url %}aria-current="page"{% endif %}
+                     aria-label="Login">Login</a>
+                </li>
+              {% endif %}
+              <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                <a class="btn btn-primary px-3 {% if request.resolver_match.view_name == 'tutor_list' %}cta-tutor-list-active{% endif %}"
+                   href="{% url 'tutor_list' %}"
+                   {% if request.resolver_match.view_name == 'tutor_list' %}aria-current="page"{% endif %}
+                   aria-label="Find your Tutor">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  Find your Tutor
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    {% if messages %}
+      <div class="row fixed-bottom px-2">
+        <div class="col col-sm-9 col-md-8 col-lg-5">
+          {% for message in messages %}
+            <!-- Note: Django messages with the error tag don't work with this but all the other ones do, so use those -->
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show rounded-pill border-0 shadow alert-disappear-5s"
+                 role="alert">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <!-- -> Credit for capfirst filter: https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#capfirst -->
+                  <strong>{{ message.tags|capfirst }}</strong>
+                </div>
+                <div class="col">{{ message }}</div>
+                <div class="col-auto">
+                  <button type="button"
+                          class="btn-close"
+                          data-bs-dismiss="alert"
+                          aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+    <main>
+      {% block page_header %}
+        <div class="container header-container"></div>
+      {% endblock page_header %}
+      {% block content %}
+      {% endblock content %}
+      {% block post_content %}
+      {% endblock post_content %}
+    </main>
+    <!-- Footer -->
+    <!-- -> Credit for footer adapted from bootstrap: https://getbootstrap.com/docs/5.3/examples/footers/ -->
+    <div class="container-fluid mt-5 bg-dark-subtle p-5 pb-0">
+      <footer class="pt-5">
+        <div class="row">
+          <div class="col-6 col-md-5 mb-3">
+            <h5>Site Navigation</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="{% url 'landing_page' %}"
+                   class="nav-link p-0 text-body-secondary"
+                   aria-label="Home">Home</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="{% url 'faq_page' %}"
+                   class="nav-link p-0 text-body-secondary"
+                   aria-label="FAQs">FAQs</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="{% url 'about_page' %}"
+                   class="nav-link p-0 text-body-secondary"
+                   aria-label="About">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 offset-md-1 col-lg-4 offset-lg-3 mb-3">
+            <div id="mc_embed_shell">
+              <div id="mc_embed_signup">
+                <form action="https://herokuapp.us22.list-manage.com/subscribe/post?u=4f1885a9475831bbf5a92c458&amp;id=2d361a2b2e&amp;f_id=0047d5e1f0"
+                      method="post"
+                      id="mc-embedded-subscribe-form"
+                      name="mc-embedded-subscribe-form"
+                      class="validate"
+                      target="_blank">
+                  <!-- <div id="mc_embed_signup_scroll">
+                    <h2>Sign up for our newsletter</h2>
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL">E-Mail-Adresse</label>
+                      <input type="email"
+                             name="EMAIL"
+                             class="required email"
+                             id="mce-EMAIL"
+                             required=""
+                             value="">
+                    </div>
+                    <div id="mce-responses" class="clear foot">
+                      <div class="response" id="mce-error-response" style="display: none;"></div>
+                      <div class="response" id="mce-success-response" style="display: none;"></div>
+                    </div>
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                      /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                      <input type="text"
+                             name="b_4f1885a9475831bbf5a92c458_2d361a2b2e"
+                             tabindex="-1"
+                             value="">
+                    </div>
+                    <div class="optionalParent">
+                      <div class="clear foot d-flex flex-wrap">
+                        <input type="submit"
+                               name="subscribe"
+                               id="mc-embedded-subscribe"
+                               class="button"
+                               value="Subscribe">
+                        <p style="margin: 0px auto;">
+                          <a href="http://eepurl.com/iWBqJc"
+                             title="Mailchimp - email marketing made easy and fun">
+                            <span style="display: inline-block;
+                                         background-color: transparent;
+                                         border-radius: 4px">
+                              <img class="refferal_badge"
+                                   src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                                   alt="Intuit Mailchimp"
+                                   style="width: 220px;
+                                          height: 40px;
+                                          display: flex;
+                                          padding: 2px 0px;
+                                          justify-content: center;
+                                          align-items: center">
+                            </span>
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div> -->
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 mt-4 border-top">
+          <!-- <p>
+            <i class="fa fa-copyright"></i>
+            <span id="year"></span> BS
+          </p> -->
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3">
+              <a class="link-body-emphasis"
+                 href="https://github.com/Mudassirmalik786/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="GitHub">
+                <i class="fab fa-github fa-2x"></i>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a class="link-body-emphasis"
+                 href="https://instagram.com"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Instagram">
+                <i class="fab fa-instagram fa-2x"></i>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a class="link-body-emphasis"
+                 href="https://www.facebook.com/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Facebook">
+                <i class="fab fa-facebook fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    {% block postloadjs %}
+      <!-- add a fontawesome kit -->
+      <script src="https://kit.fontawesome.com/8f0b8db894.js"
+              crossorigin="anonymous"></script>
+      <!-- add jquery -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+              integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+              crossorigin="anonymous"></script>
+      <!-- add bootstrap scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+              crossorigin="anonymous"></script>
+      <!-- Stripe -->
+      <script src="https://js.stripe.com/v3/"></script>
+      <!-- Mailchimp -->
+      <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+      <script>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+      <!-- custom script -->
+      <script src="{% static "js/base.js" %}"></script>
+    {% endblock postloadjs %}
+  </body>
+</html>

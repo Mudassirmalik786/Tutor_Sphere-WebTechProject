@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <div class="container">
+    <h1>Payment</h1>
+    <div class="row row-gap-5 mt-5">
+      <div class="col">
+        <span class="text-muted">The following Lessons are scheduled for payment:</span>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Start Time</th>
+                <th>Tutor</th>
+                <th>Event Name</th>
+                <th>Status</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for session in sessions %}
+                <tr>
+                  <td>{{ session.start_time }} (UTC)</td>
+                  <td>{{ session.tutor }}</td>
+                  <td>{{ session.session_name }}</td>
+                  <td>{{ session.session_status }}</td>
+                  <td>{{ session.price }} EUR</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>
+                  <strong>Total Balance</strong>
+                </td>
+                <td colspan="3"></td>
+                <td>
+                  <strong>{{ total_price }} EUR</strong>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h5>
+          Amount to Pay: <strong>{{ total_price }} EUR</strong>
+        </h5>
+        <form id="payment-form">
+          {% csrf_token %}
+          <div class="mb-3" id="payment-element">
+            <!-- Elements will create form elements here -->
+          </div>
+          <button id="submit" class="btn btn-primary">Pay Now</button>
+          <div id="error-message" class="mt-3 rounded-pill border-0">
+            <!-- Display error message to your customers here -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+{% block postloadjs %}
+  {{ block.super }}
+  <script id="payment-data" type="application/json">
+    {
+      "stripe_public_key": "{{ STRIPE_PUBLIC_KEY|escapejs }}",
+      "client_secret": "{{ CLIENT_SECRET|escapejs }}",
+      "session_ids": "{{ session_ids|escapejs }}",
+      "user_id": "{{ user.id|escapejs }}",
+      "cache_payment_data_url": "{% url 'cache_payment_data' %}",
+      "development": "{{ development|escapejs }}",
+      "payment_create_url": "{% url 'payment_create' %}"
+    }
+  </script>
+  <script src="{% static 'booking/js/payment.js' %}"></script>
+{% endblock postloadjs %}

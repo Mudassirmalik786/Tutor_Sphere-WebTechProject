@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Confirming payment ...</p>
+            <div id="message" class="alert alert-success rounded-pill border-0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form action="{% url 'payment_create' %}"
+        method="post"
+        id="payment-form"
+        class="d-none">
+    {% csrf_token %}
+    {{ form }}
+  </form>
+{% endblock content %}
+{% block postloadjs %}
+  {{ block.super }}
+  {{ STRIPE_PUBLIC_KEY|json_script:"stripe-public-key" }}
+  <script src="{% static "booking/js/payment_create.js" %}"></script>
+{% endblock postloadjs %}

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://gipfel-tutor-768a610dc54f.herokuapp.com/sitemap.xml

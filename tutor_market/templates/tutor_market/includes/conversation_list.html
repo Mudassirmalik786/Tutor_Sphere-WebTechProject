@@ -1,0 +1,10 @@
+<h2>Conversations</h2>
+<ul>
+    {% for conversation in conversations %}
+        <li>
+            <a href="{% url 'chat' conversation.id %}">
+                Conversation with {{ conversation.participants.exclude(id=request.user.id).first.username }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

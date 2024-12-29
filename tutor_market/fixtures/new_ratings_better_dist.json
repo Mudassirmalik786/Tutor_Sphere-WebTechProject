@@ -1,0 +1,482 @@
+[
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000028,
+        "fields": {
+            "tutor": 1,
+            "user": 100000012,
+            "score": 4,
+            "comment": "Marie was quite good, but I think she could add more interactive activities."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000029,
+        "fields": {
+            "tutor": 1,
+            "user": 100000013,
+            "score": 5,
+            "comment": "Marie is an excellent tutor! She really helped me improve my English."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000030,
+        "fields": {
+            "tutor": 1,
+            "user": 100000014,
+            "score": 3,
+            "comment": "Marie was okay, but I felt the session could have been more engaging."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000031,
+        "fields": {
+            "tutor": 2,
+            "user": 100000012,
+            "score": 5,
+            "comment": "Great session with lots of detailed explanations!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000032,
+        "fields": {
+            "tutor": 2,
+            "user": 100000013,
+            "score": 4,
+            "comment": "Fantastic tutor! Highly recommend."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000033,
+        "fields": {
+            "tutor": 2,
+            "user": 100000014,
+            "score": 3,
+            "comment": "The session was average, nothing special."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000034,
+        "fields": {
+            "tutor": 4,
+            "user": 100000012,
+            "score": 2,
+            "comment": "Very disappointing session."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000035,
+        "fields": {
+            "tutor": 4,
+            "user": 100000013,
+            "score": 3,
+            "comment": "Not very helpful."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000036,
+        "fields": {
+            "tutor": 4,
+            "user": 100000014,
+            "score": 4,
+            "comment": "It was okay, but could be better."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000037,
+        "fields": {
+            "tutor": 100000002,
+            "user": 100000011,
+            "score": 5,
+            "comment": "John is an amazing tutor! He really knows his stuff."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000038,
+        "fields": {
+            "tutor": 100000002,
+            "user": 100000013,
+            "score": 4,
+            "comment": "John's lessons are very helpful."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000039,
+        "fields": {
+            "tutor": 100000002,
+            "user": 100000014,
+            "score": 3,
+            "comment": "John is good, but there's room for improvement."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000040,
+        "fields": {
+            "tutor": 100000003,
+            "user": 100000014,
+            "score": 5,
+            "comment": "Jane is fantastic! I learned so much."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000041,
+        "fields": {
+            "tutor": 100000003,
+            "user": 100000012,
+            "score": 4,
+            "comment": "Jane's lessons are very informative."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000042,
+        "fields": {
+            "tutor": 100000003,
+            "user": 100000012,
+            "score": 3,
+            "comment": "Jane is good, but could be more engaging."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000043,
+        "fields": {
+            "tutor": 100000004,
+            "user": 100000013,
+            "score": 5,
+            "comment": "Michael's history lessons are the best!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000044,
+        "fields": {
+            "tutor": 100000004,
+            "user": 100000012,
+            "score": 4,
+            "comment": "Michael is a great tutor."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000045,
+        "fields": {
+            "tutor": 100000004,
+            "user": 100000014,
+            "score": 3,
+            "comment": "Michael's lessons are okay."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000046,
+        "fields": {
+            "tutor": 100000005,
+            "user": 100000005,
+            "score": 5,
+            "comment": "Emily is an excellent tutor!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000047,
+        "fields": {
+            "tutor": 100000005,
+            "user": 100000011,
+            "score": 4,
+            "comment": "Emily's lessons are very helpful."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000048,
+        "fields": {
+            "tutor": 100000005,
+            "user": 100000012,
+            "score": 3,
+            "comment": "Emily is good, but could improve."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000049,
+        "fields": {
+            "tutor": 100000006,
+            "user": 100000013,
+            "score": 5,
+            "comment": "David is an amazing biology tutor!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000050,
+        "fields": {
+            "tutor": 100000006,
+            "user": 100000014,
+            "score": 4,
+            "comment": "David's lessons are very informative."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000051,
+        "fields": {
+            "tutor": 100000006,
+            "user": 100000012,
+            "score": 3,
+            "comment": "David is good, but could be more engaging."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000052,
+        "fields": {
+            "tutor": 100000007,
+            "user": 100000013,
+            "score": 5,
+            "comment": "Sarah's history lessons are fantastic!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000053,
+        "fields": {
+            "tutor": 100000007,
+            "user": 100000011,
+            "score": 4,
+            "comment": "Sarah is a great tutor."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000054,
+        "fields": {
+            "tutor": 100000007,
+            "user": 100000013,
+            "score": 3,
+            "comment": "Sarah's lessons are okay."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000055,
+        "fields": {
+            "tutor": 100000008,
+            "user": 100000012,
+            "score": 5,
+            "comment": "Chris is an excellent math tutor!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000056,
+        "fields": {
+            "tutor": 100000008,
+            "user": 100000011,
+            "score": 4,
+            "comment": "Chris's lessons are very helpful."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000057,
+        "fields": {
+            "tutor": 100000008,
+            "user": 100000011,
+            "score": 3,
+            "comment": "Chris is good, but could improve."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000058,
+        "fields": {
+            "tutor": 100000009,
+            "user": 100000009,
+            "score": 5,
+            "comment": "Laura is an amazing English tutor! Highly recommend."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000059,
+        "fields": {
+            "tutor": 100000009,
+            "user": 100000010,
+            "score": 4,
+            "comment": "Laura's lessons are very helpful."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000060,
+        "fields": {
+            "tutor": 100000009,
+            "user": 100000008,
+            "score": 3,
+            "comment": "Laura is good, but there's room for improvement."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000061,
+        "fields": {
+            "tutor": 100000010,
+            "user": 100000005,
+            "score": 5,
+            "comment": "Matthew is a fantastic physics tutor!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000062,
+        "fields": {
+            "tutor": 100000010,
+            "user": 100000006,
+            "score": 4,
+            "comment": "Matthew's lessons are very informative."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000063,
+        "fields": {
+            "tutor": 100000010,
+            "user": 100000007,
+            "score": 3,
+            "comment": "Matthew is good, but could be more engaging."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000064,
+        "fields": {
+            "tutor": 100000011,
+            "user": 100000008,
+            "score": 5,
+            "comment": "Olivia is an excellent chemistry tutor!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000065,
+        "fields": {
+            "tutor": 100000011,
+            "user": 100000009,
+            "score": 4,
+            "comment": "Olivia's lessons are very helpful."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000066,
+        "fields": {
+            "tutor": 100000011,
+            "user": 100000010,
+            "score": 3,
+            "comment": "Olivia is good, but could improve."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000067,
+        "fields": {
+            "tutor": 100000012,
+            "user": 100000011,
+            "score": 5,
+            "comment": "Daniel is a fantastic computer science tutor!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000068,
+        "fields": {
+            "tutor": 100000012,
+            "user": 100000012,
+            "score": 4,
+            "comment": "Daniel's lessons are very informative."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000069,
+        "fields": {
+            "tutor": 100000012,
+            "user": 100000013,
+            "score": 3,
+            "comment": "Daniel is good, but could be more engaging."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000070,
+        "fields": {
+            "tutor": 100000013,
+            "user": 100000014,
+            "score": 5,
+            "comment": "Sophia is an excellent literature tutor!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000071,
+        "fields": {
+            "tutor": 100000013,
+            "user": 100000011,
+            "score": 4,
+            "comment": "Sophia's lessons are very helpful."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000072,
+        "fields": {
+            "tutor": 100000013,
+            "user": 100000012,
+            "score": 3,
+            "comment": "Sophia is good, but could improve."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000073,
+        "fields": {
+            "tutor": 100000014,
+            "user": 100000007,
+            "score": 5,
+            "comment": "James is a fantastic economics tutor!"
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000074,
+        "fields": {
+            "tutor": 100000014,
+            "user": 100000008,
+            "score": 4,
+            "comment": "James's lessons are very informative."
+        }
+    },
+    {
+        "model": "tutor_market.rating",
+        "pk": 100000075,
+        "fields": {
+            "tutor": 100000014,
+            "user": 100000009,
+            "score": 3,
+            "comment": "James is good, but could be more engaging."
+        }
+    }
+]

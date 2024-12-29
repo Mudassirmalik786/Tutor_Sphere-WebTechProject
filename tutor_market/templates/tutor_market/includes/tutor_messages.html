@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Messages</title>
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .sending-area {
+            background-color: #fdfdfd;
+            padding: 25px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .sending-area h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .sending-area #sending-to {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .sending-area form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sending-area input, .sending-area textarea {
+            font-size: 14px;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+            background-color: #fafafa;
+        }
+
+        .sending-area input:focus, .sending-area textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+        }
+
+        .sending-area textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .send-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            align-self: flex-start;
+        }
+
+        .send-button:hover {
+            background-color: #45a049;
+        }
+
+        .messages-area {
+            display: flex;
+            gap: 20px;
+        }
+
+        .messages-column {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-height: 400px; /* Set a max height */
+            overflow-y: auto; /* Add vertical scrollbar when content overflows */
+        }
+
+        .messages-column h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .message {
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+        }
+
+        .message.received {
+            background-color: #e8f5e9;
+            border-left: 4px solid #66bb6a;
+        }
+
+        .message.sent {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffa726;
+        }
+
+        .timestamp {
+            font-size: 12px;
+            text-align: right;
+            color: #777;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="javascript:history.back()" class="back-link">&larr; Back</a>
+        <div class="sending-area">
+            <h2>Send a New Message</h2>
+            <form method="POST" onsubmit="return validateForm()">
+                {% csrf_token %}
+                <p id="sending-to"><strong>Sending to:</strong> <span id="selected-user">None</span></p>
+                <input type="hidden" name="recipient_email" id="recipient_email" required>
+                {{ form.as_p }}
+                <button type="submit" class="send-button">Send</button>
+            </form>
+        </div>
+
+        <div class="messages-area">
+            <div class="messages-column">
+                <h2>Received Messages</h2>
+                {% for message in received_messages %}
+                    <div class="message received" onclick="selectRecipient('{{ message.sender.email }}')">
+                        <p><strong>{{ message.sender.username }}:</strong> {{ message.content }}</p>
+                        <p class="timestamp">{{ message.timestamp|date:"M d, Y H:i" }}</p>
+                    </div>
+                {% empty %}
+                    <p>No messages received.</p>
+                {% endfor %}
+            </div>
+
+            <div class="messages-column">
+                <h2>Sent Messages</h2>
+                {% for message in sent_messages %}
+                    <div class="message sent">
+                        <p><strong>To {{ message.recipient.email }}:</strong> {{ message.content }}</p>
+                        <p class="timestamp">{{ message.timestamp|date:"M d, Y H:i" }}</p>
+                    </div>
+                {% empty %}
+                    <p>No messages sent.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectRecipient(email) {
+            document.getElementById('recipient_email').value = email;
+            document.getElementById('selected-user').innerText = email;
+        }
+
+        function validateForm() {
+            const email = document.getElementById('recipient_email').value;
+            if (!email) {
+                alert('Please select a recipient from received messages.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

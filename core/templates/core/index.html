@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- -> Credit for adaptable page header: https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/home/templates/home/index.html -->
+{% block page_header %}{% endblock %}
+{% block content %}
+  <section class="container">
+    <div class="row no-gutters w-100">
+      <!-- Hero image -->
+      <div class="col-md-6 d-flex justify-content-center align-items-center hero-image">
+        <img src="{% static 'images/picbgnew.png' %}"
+             alt="Design image of a mountain peak signifying your path of online learning."
+             class="img-fluid" style="padding-bottom: 10px;">
+      </div>
+      <!-- CTA Section -->
+      <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="text-normal">
+          <a href="{% url 'tutor_list' %}"
+             class="btn btn-primary btn-lg my-gradient"
+             aria-label="Find your Online Tutor">Find your Online Tutor</a>
+        </h1>
+        <div class="text-center my-5">
+          Learn from a private tutor with our <strong>Online Tutoring Service</strong>.
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col text-center my-secondary-gradient p-3">
+        <span>Get paid and help others learn:</span>
+        <a href="{% url 'add_tutor' %}"
+           class="btn btn-outline-primary"
+           aria-label="Become a Tutor" style="color: white; border: 1px solid white;">Become a Tutor</a>
+      </div>
+    </div>
+  </div>
+  <!-- Bento information Section -->
+  <section class="container mt-5 p-md-5">
+    <h2 class="d-none">All you need to know about Gipfel Tutor to get started</h2>
+    <!-- -> Credit for CSS Grid (generation): https://cssgrid-generator.netlify.app/ -->
+    <div class="parent">
+      <div class="div1 card">
+        <img src="{% static 'images/book.jpg' %}"
+             alt="A path of online learning leading up a mountain summit."
+             class="img-fluid rounded">
+        <div class="card-body p-0">
+          <h5>Online Tutoring Service with the Subject you want</h5>
+          <p>Find a private Tutor for the field that you want to know more about.</p>
+          <p>Pick a subject below:</p>
+          <a href="{% url 'tutor_list' %}?subject=english"
+             class="btn btn-dark mt-2"
+             aria-label="English">English</a>
+          <a href="{% url 'tutor_list' %}?subject=math"
+             class="btn btn-dark mt-2"
+             aria-label="Math">Math</a>
+          <a href="{% url 'tutor_list' %}?subject=science"
+             class="btn btn-dark mt-2"
+             aria-label="Science">Science</a>
+          <a href="{% url 'tutor_list' %}?subject=history"
+             class="btn btn-dark mt-2"
+             aria-label="History">History</a>
+          <a href="{% url 'tutor_list' %}?subject=biology"
+             class="btn btn-dark mt-2"
+             aria-label="Biology">Biology</a>
+          <a href="{% url 'tutor_list' %}?subject=chemistry"
+             class="btn btn-dark mt-2"
+             aria-label="Chemistry">Chemistry</a>
+        </div>
+      </div>
+      <div class="div2 card">
+        <div class="row g-0">
+          <div class="col-12 col-md-5 order-md-2">
+            <img src="{% static 'images/laptop.jpg' %}"
+                 alt="A tutor that is video chatting on a laptop"
+                 class="img-fluid rounded" style="padding-top: 60px;">
+          </div>
+          <div class="col">
+            <div class="card-body p-0">
+              <h5>Online learning with values that suit you</h5>
+              <p>Find the ideal tutor for your needs with our matching system.</p>
+              <p>Pick Teaching Values that are important to you below:</p>
+              <form action="{% url 'tutor_list' %}" method="get">
+                <input type="radio"
+                       name="teachingvalue"
+                       value="self-learning"
+                       class="btn-check value-btn"
+                       id="btn-check-1">
+                <label class="btn btn-light mt-2" for="btn-check-1">Self-Learning</label>
+                <input type="radio"
+                       name="teachingvalue"
+                       value="repetition"
+                       class="btn-check value-btn"
+                       id="btn-check-2">
+                <label class="btn btn-light mt-2" for="btn-check-2">Repetition</label>
+                <input type="radio"
+                       name="teachingvalue"
+                       value="engagement"
+                       class="btn-check value-btn"
+                       id="btn-check-3">
+                <label class="btn btn-light mt-2" for="btn-check-3">Engagement</label>
+                <input type="radio"
+                       name="teachingvalue"
+                       value="urgency"
+                       class="btn-check value-btn"
+                       id="btn-check-4">
+                <label class="btn btn-light mt-2" for="btn-check-4">Urgency</label>
+                <br>
+                <button type="submit"
+                        class="btn btn-primary mt-3 value-btn-hidden"
+                        id="values-submit-btn">Find your match</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div3 card">
+        <div class="card-body p-0">
+          <h5>Secure and Affordable Payments</h5>
+          <p>Invest in your future without breaking the bank. Enjoy competitive rates with secure, hassle-free transactions.</p>
+        </div>
+      </div>
+      <div class="div4 card">
+        <img src="{% static 'images/bento-wallet.webp' %}"
+             alt="A wallet"
+             class="img-fluid rounded">
+      </div>
+      <div class="div5 card">
+        <div class="row g-0 row-gap-3">
+          <div class="col-12 col-md-5">
+            <img src="{% static 'images/bento-start-now.webp' %}"
+                 alt="A wallet"
+                 class="img-fluid rounded">
+          </div>
+          <div class="col">
+            <div class="card-body p-0">
+              <h5>Start Your Journey Today!</h5>
+              <p>Join Gipfel Tutor now and take the first step towards achieving your academic and personal growth goals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div6 card">
+        <div class="card-body p-0">
+          <h5>Flexible One-on-One Online Tutoring</h5>
+          <p>Learn at your own pace and convenience with our flexible scheduling options. Your education, on your time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+{% block postloadjs %}
+  {{ block.super }}
+  <script src="{% static "core/js/index.js" %}"></script>
+{% endblock postloadjs %}

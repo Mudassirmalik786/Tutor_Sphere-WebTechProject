@@ -1,0 +1,48 @@
+[
+    {
+        "model": "auth.group",
+        "pk": 1,
+        "fields": {
+            "name": "Customer Service Admins",
+            "permissions": [
+                31,
+                32,
+                36,
+                12,
+                16,
+                81,
+                82,
+                83,
+                84,
+                77,
+                78,
+                79,
+                80,
+                67,
+                68,
+                69,
+                72,
+                58,
+                59,
+                60
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 2,
+        "fields": {
+            "name": "Site Owner Admin",
+            "permissions": [
+                53,
+                54,
+                55,
+                56,
+                49,
+                50,
+                51,
+                52
+            ]
+        }
+    }
+]

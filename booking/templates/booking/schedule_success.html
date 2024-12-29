@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <div class="container mt-5">
+    <!-- Success Message -->
+    <div class="alert alert-success rounded-pill border-0 px-5">
+      <p class="pt-3">
+        <strong>Congratulations! Your Lesson was scheduled successfully</strong>
+      </p>
+      <p>You will receive an email from Calendly with the details of your lesson.</p>
+    </div>
+    <!-- Session Details -->
+    <div class="row row-gap-5 mt-5">
+      <div class="col-md-7">
+        <h4>Lesson Information</h4>
+        <p>
+          <strong>Your Tutor:</strong> {{ session.tutor }}
+        </p>
+        <p>
+          <strong>Your Email:</strong> {{ session.invitee_email }}
+        </p>
+        <p>
+          <strong>Calendly Event Name:</strong> {{ session.session_name }}
+        </p>
+        <p>
+          <strong>Start Time:</strong> {{ session.start_time }} (UTC)
+        </p>
+        <p>
+          <strong>Duration:</strong> {{ session.duration }} minutes
+        </p>
+        <p>
+          <strong>Subject:</strong> {{ session.subject.name }}
+        </p>
+        <p>
+          <strong>Invitee Notes:</strong>
+          {% if session.invitee_notes %}
+            {{ session.invitee_notes }}
+          {% else %}
+            -
+          {% endif %}
+        </p>
+        <p>
+          <strong>Session Status:</strong> {{ session.get_session_status_display }}
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="{% url 'tutor_detail' pk=session.tutor.id %}"
+             class="btn btn-primary"
+             aria-label="Schedule another lesson with {{ session.tutor }}"><i class="fa-solid fa-plus"></i> Schedule another lesson with {{ session.tutor }}</a>
+          <a href="{% url "cancel_session" pk=session.id %}"
+             class="btn btn-danger"
+             aria-label="Cancel Lesson"><i class="fas fa-times"></i> Cancel Lesson</a>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <h4>Payment Information</h4>
+        <p>
+          <strong>Price:</strong> {{ session.price }}
+        </p>
+        <p>
+          <strong>Payment:</strong>
+          {% if session.payment_complete %}
+            Complete
+          {% else %}
+            Due
+          {% endif %}
+        </p>
+        <a href="{% url 'payments' pk=session.student.id %}"
+           class="btn btn-secondary mt-3"
+           aria-label="Go to Payments"><i class="fas fa-euro-sign"></i> Go to Payments</a>
+        <p class="mt-1">
+          <span class="text-muted">
+            Payments can be made through the Payments page. You can pay for each of your Lessons individually or in bulk, as you prefer.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

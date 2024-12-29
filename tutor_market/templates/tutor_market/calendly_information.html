@@ -1,0 +1,72 @@
+calendly_information.html 
+{% extends "base.html" %}
+{% block content %}
+    <div class="container mt-5">
+        <a href="{% url 'dashboard' user.pk %}"
+           class="btn btn-outline-secondary btn-small mb-5"
+           aria-label="Return to Dashboard">
+            <i class="fas fa-arrow-left"></i> Return to Dashboard
+        </a>
+        <div class="row ">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="mb-4">How to Set Up Your Calendly</h2>
+                <div class="alert alert-warning" role="alert">
+                    Note: Your Tutor account can only be activated after you have successfully connected your Calendly account. Please follow the steps below to set up your Calendly account and integrate it with your tutor dashboard.
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">Step 1: Register for a Calendly Account</div>
+                    <div class="card-body">
+                        Go to the
+                        <a href="https://calendly.com"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Calendly website">Calendly website</a>
+                        and click on "Sign Up" to create a new account. Fill in the required information and follow the prompts to complete the registration process.
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">Step 2: Login to Calendly</div>
+                    <div class="card-body">Once you have registered, log in using your credentials.</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">Step 3: Create an Event</div>
+                    <div class="card-body">
+                        After logging in, navigate to the dashboard. Click on "Event Types" on the top menu. Then, click on "New Event Type" and choose your event type (One-on-One). Fill in the necessary details for your event, such as event name, location, duration, and description.
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">Step 4: Get Your Event URL</div>
+                    <div class="card-body">
+                        After creating your event, Calendly will provide you with a unique URL for your event. This URL can be shared with others to schedule the event. You can find this URL on the event details page.
+                        <p class="text-muted">If you already have your Event URL, you can add it now:</p>
+                        <a href="{% url 'edit_tutor' user.tutor.pk %}"
+                           class="btn btn-outline-light btn-sm"
+                           aria-label="Add Calendly Event URL">
+                            <i class="fas fa-pencil"></i> Add Calendly Event URL
+                        </a>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">Step 5: Connect Your Calendly Account</div>
+                    <div class="card-body">
+                        To integrate Calendly with your tutor dashboard, click on the "Connect Calendly" button on the dashboard page. Follow the instructions to authorize the connection between your tutor account and Calendly.
+                        <div>
+                            <p class="text-muted mt-3">If you have already set up your Calendly account, you can simply connect it now:</p>
+                            <a href="{% url 'connect_calendly' %}"
+                               class="btn btn-outline-light btn-sm"
+                               aria-label="Connect Calendly">
+                                <i class="fas fa-link"></i> Connect Calendly
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    For more detailed instructions and additional settings, please refer to the <a href="https://help.calendly.com/hc/en-us"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Calendly Help Center">Calendly Help Center</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

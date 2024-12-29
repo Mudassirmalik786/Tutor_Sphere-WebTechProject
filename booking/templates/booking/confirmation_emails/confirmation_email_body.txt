@@ -1,0 +1,23 @@
+Hello {{ payment.user.username }}!
+
+This is a confirmation of your payment at Gipfel Tutor. Your payment information is below:
+
+Payment Details:
+- Paying User: {{ payment.user.username }}
+- Amount: {{ payment.amount }}
+- Currency: {{ payment.currency|upper }}
+- Payment Status: {{ payment.get_status_display }}
+- Date: {{ payment.date|date:'d M Y H:i' }}
+
+With this payment, you have paid for the following lessons:
+{% for session in sessions %}
+- Lesson with {{ session.tutor.display_name }} on {{ session.start_time|date:'d M Y' }} at {{ session.start_time|date:'H:i' }} (UTC). Amount: €{{ session.price }}
+{% endfor %}
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Sincerely,
+
+The Gipfel Tutor Team

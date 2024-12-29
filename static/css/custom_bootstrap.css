@@ -1,0 +1,134 @@
+/* List of all global bootstrap css variables
+   override and delete the rest before handing in! */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+/*  */
+:root,
+[data-bs-theme=light] {
+
+  /* Custom Styles */
+  --bs-black: #0f0f0f;
+
+  --bs-light: #fafafa;
+  --bs-light-rgb: 242, 242, 242;
+
+  --bs-body-bg: #fff;
+  --bs-body-bg-rgb: 255, 255, 255;
+
+  --bs-primary: #FFB703;
+  --bs-primary-rgb: 255, 183, 3;
+  --bs-primary-shaded: #FFC533;
+
+  --bs-secondary: #8ecae6;
+  --bs-secondary-rgb: 142, 202, 230;
+  --bs-secondary-shaded: #ABD8ED;
+
+  --bs-dark: #023047;
+  --bs-dark-rgb: 2, 48, 71;
+  --bs-dark-shaded: #034363;
+
+  --bs-btn-light: #C3EAFD;
+  --bs-btn-light-rgb: 195, 234, 253;
+  --bs-btn-light-shaded: #9CDCFC;
+
+  --bs-success: #198754;
+  --bs-success-rgb: 25, 135, 84;
+  --bs-success-shaded: #2CAE6A;
+
+  --bs-border-style: none;
+  --bs-border-radius: 1rem;
+  --bs-border-radius-lg: 1.5rem;
+
+  --bs-font-sans-serif: "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.btn-dark {
+  --bs-btn-color: var(--bs-gray-100);
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark-rgb);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-dark-shaded);
+  --bs-btn-hover-border-color: var(--bs-dark-shaded);
+  --bs-btn-focus-shadow-rgb: var(--bs-dark-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: var(--bs-dark-shaded);
+  --bs-btn-active-border-color: var(--bs-dark-shaded);
+}
+
+.btn-light {
+  --bs-btn-color: var(--bs-dark);
+  --bs-btn-bg: var(--bs-btn-light);
+  --bs-btn-border-color: var(--bs-btn-light-rgb);
+  --bs-btn-hover-color: var(--bs-dark);
+  --bs-btn-hover-bg: var(--bs-btn-light-shaded);
+  --bs-btn-hover-border-color: var(--bs-btn-light-shaded);
+  --bs-btn-focus-shadow-rgb: var(--bs-btn-light-rgb);
+  --bs-btn-active-color: var(--bs-dark);
+  --bs-btn-active-bg: var(--bs-btn-light-shaded);
+  --bs-btn-active-border-color: var(--bs-btn-light-shaded);
+}
+
+.btn-outline-light {
+  --bs-btn-color: var(--bs-dark);
+  --bs-btn-bg: var(--bs-white);
+  --bs-btn-border-color: var(--bs-gray-200);
+  --bs-btn-hover-color: var(--bs-dark);
+  --bs-btn-hover-bg: var(--bs-gray-200);
+  --bs-btn-hover-border-color: var(--bs-gray-200);
+  --bs-btn-focus-shadow-rgb: var(--bs-btn-light-rgb);
+  --bs-btn-active-color: var(--bs-dark);
+  --bs-btn-active-bg: var(--bs-btn-light);
+  --bs-btn-active-border-color: var(--bs-btn-light-rgb);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-black);
+  --bs-btn-border-color: var(--bs-black);
+  --bs-btn-hover-color: var(--bs-black);
+  --bs-btn-hover-bg: var(--bs-secondary);
+  --bs-btn-hover-border-color: var(--bs-secondary);
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+  --bs-btn-active-color: var(--bs-black);
+  --bs-btn-active-bg: var(--bs-primary);
+  --bs-btn-active-border-color: var(--bs-primary);
+}
+
+.btn-success {
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success-rgb);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-success-shaded);
+  --bs-btn-hover-border-color: var(--bs-success-shaded);
+  --bs-btn-focus-shadow-rgb: var(--bs-success-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: var(--bs-success-shaded);
+  --bs-btn-active-border-color: var(--bs-success-shaded);
+}
+
+.card {
+  border: none;
+  background-color: var(--bs-light);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  border-bottom: none;
+  background-color: transparent;
+  padding-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-footer {
+  border-top: none;
+  background-color: transparent;
+  padding-top: 0.5rem;
+}
+
+.list-group-item {
+  background-color: transparent;
+}

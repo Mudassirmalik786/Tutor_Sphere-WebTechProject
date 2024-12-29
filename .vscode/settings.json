@@ -1,0 +1,21 @@
+{
+  "files.exclude": {
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/.github": true,
+      "**/.gitp*": true,
+      "**/.hg": true,
+      "**/.svn": true,
+      "**/.vscode": true,
+      "**/core.Microsoft*": true,
+      "**/core.mongo*": true,
+      "**/core.python*": true,
+      "**/CVS": true
+   },
+   "files.autoSave": "afterDelay",
+   "workbench.colorTheme": "Visual Studio Dark",
+   "terminal.integrated.gpuAcceleration": "canvas",
+   "[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]": {
+   "editor.defaultFormatter": "monosans.djlint"
+   },
+}

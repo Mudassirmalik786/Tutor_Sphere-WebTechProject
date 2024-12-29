@@ -1,0 +1,195 @@
+.room__conversation {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    height: 64%;
+  }
+  
+  .threads h3 {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-gray);
+  }
+  
+  .threads {
+    background: var(--color-bg);
+    border-radius: 0.7rem;
+    overflow-y: auto;
+    height: 100%;
+    margin-top: 28vh;
+    padding: 0 2rem 4rem 2rem;
+  }
+  
+  .thread {
+    border-left: 2px solid var(--color-dark);
+    padding-left: 1rem;
+    margin: 2rem 0;
+    padding: 2rem;
+  }
+  
+  .thread__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .thread__top svg {
+    fill: var(--color-dark-light);
+  }
+  
+  .thread__author {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .thread__authorInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .thread__details {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+  }
+  
+  .room__message {
+    padding: 2rem;
+    position: absolute;
+    z-index: 111;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent; 
+  padding: 10px;
+  background-color: #f1f1f1;
+  width: 97%;
+  margin: auto;
+  position: relative;
+  }
+  .room__message > form > input {
+    resize: none;
+    background-color: var(--color-dark-light);
+    color: var(--color-light);
+    border: none;
+    outline: none;
+    border-radius: 0.7rem;
+    height: 4.5rem;
+    width: 100%;
+    margin-top: -1rem;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .room__message > form > input::placeholder {
+    color: var(--color-light-gray);
+  }
+  /* Container for the input and button */
+  .message-container {
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    display: flex
+;
+    align-items: center;
+    width: 70%;
+    max-width: 70%;
+    margin: auto;
+  }
+  
+  /* Styling for the input field */
+  .message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+    WIDTH: 80%;
+      DISPLAY: FLEX;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      /* border-radius: 10%; */
+      height: 32px;
+      background: var(--color-bg);
+      position: relative;
+      top: 20%;
+      color: var(--color-light);
+  }
+  .message-input:active{
+    border: 4px solid var(--color-main);
+  }
+  
+  /* Styling for the Send AND Attach button */
+  /* .send-button {
+    border: none;
+    padding: 6px 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    cursor: not-allowed;
+    
+  } */
+  .AttachFile-btn{
+    border: none;
+    padding: 6px 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: background-color 0.3s ease; */
+    background: transparent;
+  }
+  
+  
+  
+  .send-icon {
+    height: 20px;
+    width: 20px;
+    background: transparent;
+  }
+   .send-button {
+    position: relative;
+    border: none;
+    cursor: pointer;
+    background-color: var(--color-bg);
+    
+   }
+  
+  
+  .send-button.loading {
+    pointer-events: none;
+  }
+  
+  .send-button.loading .send-icon {
+    display: none;
+  }
+  
+  .send-button.loading:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 3px solid transparent;
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

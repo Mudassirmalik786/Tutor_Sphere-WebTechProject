@@ -1,0 +1,30 @@
+[
+    {
+        "model": "tutor_market.value",
+        "pk": 1,
+        "fields": {
+            "name": "Self-Learning"
+        }
+    },
+    {
+        "model": "tutor_market.value",
+        "pk": 2,
+        "fields": {
+            "name": "Repetition"
+        }
+    },
+    {
+        "model": "tutor_market.value",
+        "pk": 3,
+        "fields": {
+            "name": "Urgency"
+        }
+    },
+    {
+        "model": "tutor_market.value",
+        "pk": 4,
+        "fields": {
+            "name": "Engagement"
+        }
+    }
+]

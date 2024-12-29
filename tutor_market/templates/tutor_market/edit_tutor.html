@@ -1,0 +1,21 @@
+{% extends "includes/form_dialogue_lg.html" %}
+{% load crispy_forms_tags %}
+{% block form %}
+  <h1>Edit Your Profile</h1>
+  <p class="text-muted text-end">
+    <span class="asteriskField">*</span> required fields
+  </p>
+  <!-- -> Credit for enctype attribute: https://www.geeksforgeeks.org/define-multipart-form-data/ -->
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div>
+      <a href="{% url 'calendly_information' %}"
+        class="btn btn-outline-dark btn-sm mb-5"
+        aria-label="Instructions: Where to find my Calendly information?">
+        <i class="fas fa-info-circle"></i> Where to find my Calendly information?
+      </a>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+{% endblock form %}

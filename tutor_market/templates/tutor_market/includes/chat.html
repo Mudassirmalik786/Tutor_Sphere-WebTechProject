@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with @{{ tutor.display_name|lower }}</title>
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h3>@{{ tutor.display_name|lower }}</h3>
+        </div>
+
+        <!-- Threads Section -->
+        <div class="threads">
+            {% for message in messages %}
+                <div class="thread {% if message.sender == user %}sent{% else %}received{% endif %}">
+                    <div class="thread__details">
+                        <p class="thread__content">
+                            {{ message.content }}
+                        </p>
+                        <span class="thread__meta">
+                            {{ message.timestamp|date:"H:i" }}
+                        </span>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="no-messages">No messages yet. Start the conversation!</p>
+            {% endfor %}
+        </div>
+
+        <!-- Input Section -->
+        <div class="room__message">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="message-container">
+                    <textarea name="content" class="message-input" placeholder="Type a message..."></textarea>
+                    <button type="submit" class="send-button">
+                        <img src="{% static 'images/favicon/send.png' %}" alt="Send" class="send-icon">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f0f0f0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #075e54;
+            color: #ffffff;
+            padding: 16px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0; /* Ensures no space between header and threads */
+        }
+
+        /* Threads Section */
+        .threads {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            margin-top: 0vh ;
+            background-color: #e5ddd5;
+        }
+
+        .threads::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .threads::-webkit-scrollbar-thumb {
+            background-color: #c0c0c0;
+            border-radius: 3px;
+        }
+
+        .thread {
+            margin-bottom: 10px;
+            max-width: 70%;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .thread.sent {
+            align-self: flex-end;
+            background-color: #dcf8c6;
+        }
+
+        .thread.received {
+            align-self: flex-start;
+            background-color: #ffffff;
+            border: 1px solid #f0f0f0;
+        }
+
+        .thread__content {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #333;
+        }
+
+        .thread__meta {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.75rem;
+            color: #999999;
+            text-align: right;
+        }
+
+        .no-messages {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Input Section */
+        .room__message {
+            padding: 12px;
+            background-color: #f0f0f0;
+            border-top: 1px solid #dcdcdc;
+        }
+
+        .message-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 12px;
+        }
+
+        .message-input {
+            flex: 1;
+            resize: none;
+            border: none;
+            padding: 12px;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        .send-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background-color: #075e54;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .send-button:hover {
+            background-color: #0a785e;
+        }
+
+        .send-icon {
+            width: 20px;
+            height: 20px;
+            filter: invert(1);
+        }
+    </style>
+</body>
+</html>

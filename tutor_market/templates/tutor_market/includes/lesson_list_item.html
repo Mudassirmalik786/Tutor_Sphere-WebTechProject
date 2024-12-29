@@ -1,0 +1,64 @@
+<li class="list-group-item pb-4">
+    <strong>Subject:</strong> {{ session.subject.name }}
+    <br>
+    <strong>Date:</strong> {{ session.start_time|date:'D, d M Y, H:i' }} (UTC)
+    <br>
+    <strong>Duration:</strong> {{ session.duration }} minutes
+    <br>
+    {% if student_tutor == "student" %}
+        <strong>Student:</strong> {{ session.student }}
+        <br>
+    {% elif student_tutor == "tutor" %}
+        <strong>Tutor:</strong> {{ session.tutor }}
+        <br>
+    {% else %}
+    {% endif %}
+    {% if status %}
+        <strong>Status:</strong> {{ session.get_session_status_display }}
+        <br>
+    {% endif %}
+    {% if payment_status %}
+        <strong>Payment status:</strong>
+        {% if session.payment_complete %}
+            Complete
+        {% else %}
+            Pending
+        {% endif %}
+        <br>
+    {% endif %}
+    <div class="mt-1">
+        {% if button == "join" %}
+            <a href="{{ session.location_url }}"
+               class="btn btn-primary btn-sm"
+               rel="noopener noreferrer"
+               target="_blank"
+               aria-label="Join session"
+               title="Join session"><i class="fas fa-video"></i> Join</a>
+        {% else %}
+            <form action="{% url 'update_session_status' session.id %}"
+                  method="post"
+                  class="d-inline">
+                {% csrf_token %}
+                <input type="hidden" name="status" value="scheduled">
+                <button type="submit"
+                        class="btn btn-success btn-sm"
+                        aria-label="Schedule session"
+                        title="Schedule session">
+                    <i class="fas fa-check"></i> Schedule
+                </button>
+            </form>
+        {% endif %}
+        {% if not session.payment_complete and user != session.tutor.user %}
+            <a href="{% url 'payments' user.id %}"
+               class="btn btn-secondary btn-sm"
+               aria-label="Pay now"
+               title="Pay now"><i class="fas fa-euro-sign"></i> Pay now</a>
+        {% endif %}
+        {% if session.session_status != 'cancelled' and session.session_status != 'completed' %}
+            <a href="{% url "cancel_session" session.id %}"
+               class="btn btn-danger btn-sm"
+               aria-label="Cancel session"
+               title="Cancel session"><i class="fas fa-times"></i> Cancel</a>
+        {% endif %}
+    </div>
+</li>
