@@ -41,6 +41,7 @@ ALLOWED_HOSTS = [
     ".herokuapp.com",
     "localhost",
     "127.0.0.1",
+    "tutor-sphere-cxh8freyahc2f6bd.canadacentral-01.azurewebsites.net",
 ]
 
 
