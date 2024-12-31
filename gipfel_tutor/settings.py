@@ -180,14 +180,15 @@ elif "DATABASE_URL" in os.environ:
 else:
     DATABASES = {
         "default": {
-             "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'TutorSphere',
-        "USER": 'postgres',
-        "PASSWORD": 'admin',
-        "HOST": 'localhost',
-        "PORT": '5432',
-        }
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv("PGDATABASE", "postgres"),
+        "USER": os.getenv("PGUSER", "default_user"),
+        "PASSWORD": os.getenv("PGPASSWORD", "default_password"),
+        "HOST": os.getenv("PGHOST", "localhost"),
+        "PORT": os.getenv("PGPORT", "5432"),
     }
+    }
+
 
 
 # Password validation
