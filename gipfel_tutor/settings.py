@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 import sys
 import dj_database_url
+import django_heroku
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 
@@ -22,7 +23,7 @@ if os.path.isfile("env.py"):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -179,8 +180,12 @@ elif "DATABASE_URL" in os.environ:
 else:
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
+             "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": 'TutorSphere',
+        "USER": 'postgres',
+        "PASSWORD": 'admin',
+        "HOST": 'localhost',
+        "PORT": '5432',
         }
     }
 
@@ -265,3 +270,6 @@ STRIPE_CURRENCY = "eur"
 STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", "pk_test_51QZQgKP0fgoIcLs3916GnUdTKYzrvqSgH4L8yPGmIEmN8XYikzhjxPI5zcbggwhwQYBmf0IMpj8ZaojbkegoKwHe00CuEBqIe7")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_51QZQgKP0fgoIcLs3LUXel20tDn1dj5WBD156ucaykZGpecUjCO477wIkoMjnlIJpRJ3dNApAGhQPr9xnUjWxVA7e00UgLTIi1z")
 STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "whsec_YVowh8wZOdPNzJU0xPCrt1PQGKrg06rj")
+
+
+django_heroku.settings(locals())
