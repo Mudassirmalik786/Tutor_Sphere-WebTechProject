@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 import sys
 import dj_database_url
-import django_heroku
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 
@@ -270,6 +269,3 @@ STRIPE_CURRENCY = "eur"
 STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", "pk_test_51QZQgKP0fgoIcLs3916GnUdTKYzrvqSgH4L8yPGmIEmN8XYikzhjxPI5zcbggwhwQYBmf0IMpj8ZaojbkegoKwHe00CuEBqIe7")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_51QZQgKP0fgoIcLs3LUXel20tDn1dj5WBD156ucaykZGpecUjCO477wIkoMjnlIJpRJ3dNApAGhQPr9xnUjWxVA7e00UgLTIi1z")
 STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "whsec_YVowh8wZOdPNzJU0xPCrt1PQGKrg06rj")
-
-
-django_heroku.settings(locals())
