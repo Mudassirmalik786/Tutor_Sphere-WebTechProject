@@ -182,8 +182,8 @@ else:
         "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.getenv("PGDATABASE", "postgres"),
-        "USER": os.getenv("PGUSER", "default_user"),
-        "PASSWORD": os.getenv("PGPASSWORD", "default_password"),
+        "USER": os.getenv("PGUSER", "xmspqstpep"),
+        "PASSWORD": os.getenv("PGPASSWORD", "mudassir@123"),
         "HOST": os.getenv("PGHOST", "localhost"),
         "PORT": os.getenv("PGPORT", "5432"),
     }
