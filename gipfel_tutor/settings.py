@@ -20,7 +20,7 @@ if os.path.isfile("env.py"):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(_file_).resolve().parent.parent
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Quick-start development settings - unsuitable for production
@@ -54,6 +54,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
     "crispy_forms",
     "crispy_bootstrap5",
     "storages",
@@ -62,6 +67,8 @@ INSTALLED_APPS = [
     "tutor_market",
     "booking",
     "calendly",
+    
+    
 ]
 SITE_ID = 1  # Ensure this is set
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -76,11 +83,43 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
+
+# -> Credit for retrieving the email address: https://github.com/pennersr/django-allauth/issues/330  # noqa
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+    }
+}
+
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+ACCOUNT_SESSION_REMEMBER = True
+
+# if DEVELOPMENT:
+CALENDLY_CLIENT_ID = os.environ.get("CALENDLY_DEV_CLIENT_ID", "s3Inn4DKEVBbosK79rZCBZ6XrWGd8adljopDQNpw5PA")
+CALENDLY_CLIENT_SECRET = os.environ.get("CALENDLY_DEV_CLIENT_SECRET", "nZP6IerDsSbP_o2AQYKIn391D38ampzrZdYGS7Allkk")
+CALENDLY_REDIRECT_URI = os.environ.get("CALENDLY_DEV_REDIRECT_URI", "http://localhost:8000/calendly/auth")
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "gipfeltutor@example.com"
 SITE_ID = 1
+# else:
+#     CALENDLY_CLIENT_ID = os.environ.get("CALENDLY_PROD_CLIENT_ID", "s3Inn4DKEVBbosK79rZCBZ6XrWGd8adljopDQNpw5PA")
+#     CALENDLY_CLIENT_SECRET = os.environ.get("CALENDLY_PROD_CLIENT_SECRET", "nZP6IerDsSbP_o2AQYKIn391D38ampzrZdYGS7Allkk")
+#     CALENDLY_REDIRECT_URI = os.environ.get("CALENDLY_PROD_REDIRECT_URI", "http://localhost:8000/calendly/auth")
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
@@ -112,9 +151,13 @@ TEMPLATES = [
     },
 ]
 
+SOCIALACCOUNT_ENABLED = False
+
 AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin
+    # Needed to login by username in Django admin, regardless of allauth
     "django.contrib.auth.backends.ModelBackend",
+    # allauth specific authentication methods, such as login by email
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 WSGI_APPLICATION = "gipfel_tutor.wsgi.application"
@@ -145,6 +188,8 @@ else:
         "PORT": os.getenv("PGPORT", "5432"),
     }
     }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -214,6 +259,8 @@ else:  # Production with AWS S3
     # URLs
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
     MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/"
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
