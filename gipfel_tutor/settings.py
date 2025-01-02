@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", get_random_secret_key())
 
 # Separate Development variable for db, email backend and S3 bucket
 # DEVELOPMENT = os.environ.get("DEVELOPMENT", "") == "False"
-DEBUG = True
+DEBUG = False
 DEVELOPMENT = True
 ALLOWED_HOSTS = [
     ".herokuapp.com",
